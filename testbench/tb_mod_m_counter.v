@@ -17,5 +17,20 @@ mod_m_counter mod_m_counter1(
 initial
 	forever
 		#5 clk = ~clk;
+// Simulation control
+initial
+	#5000 $stop;
+	
+//the testbench
+initial
+	begin
+		clk = 0;
+		rst = 0;
+		#10
+		rst = 1;
+		#20
+		rst = 0;
+	end
+
 
 endmodule
